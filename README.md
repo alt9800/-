@@ -15,3 +15,14 @@
 # fork元
 [ほめたもん](https://github.com/seven320/metamon_code)
 正確にはリスペクトしてコンセプトを引き継いだもの。
+
+# その他
+実運用上は`config.yaml`を同ディレクトリに作って
+```
+# user_id = CONFIG["user_id"]
+consumer_key = CONFIG["consumer_key"]
+consumer_secret = CONFIG["consumer_secret"]
+access_token = CONFIG["access_token"]
+access_token_secret = CONFIG["access_token_secret"]
+```
+を読み込ませる
