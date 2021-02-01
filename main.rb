@@ -37,12 +37,12 @@ def pickedup #リプライしたユーザのツイートを取ってきて配列
   last24hours
 end
 
-def mentionTimeline #主機能部分 リプライの文言に「褒めて」があったら駆動して上のメソッドを走らせる。 # 過去60秒のツイート(リプライ)のみを対象にする
+def mentionTimeline #主機能部分 リプライの文言に「褒めて」または「教えて」があったら駆動して上のメソッドを走らせる。 # 過去60秒のツイート(リプライ)のみを対象にする
   just_time = Time.now
   search_span = 60.0
   @client.mentions_timeline.each do |tweet|
     if tweet.is_a?(Twitter::Tweet)
-      if tweet.text.split(" ")[1] == "褒めて" && tweet_id2time(tweet.id) >= just_time -  search_span
+      if tweet.text.split(" ")[1] == ("褒めて"||"教えて") && tweet_id2time(tweet.id) >= just_time -  search_span
         @reply_user = tweet.user.screen_name
         pickedup
         @client.update("@#{tweet.user.screen_name}\n過去24時間の#{tweet.user.name}さんがTwitterから離れていた時間は最大で#{@maxspan}時間だっためる〜！\n#{@branch}", options = {:in_reply_to_status_id => tweet.id})
