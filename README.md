@@ -10,23 +10,25 @@
  
  - グラフ出力を行った際にディレクトリの容量が膨れ上がる可能性がある。
  - グラフの軸の調整
- - グラフの文字入力に問題がある(ふぉんとも含めて)
+ - グラフの文字入力に問題がある(フォントも含めて)
  
  ~~リプライ読み込みでRESTを使っているのでユーザーからのリプライに対して全返信してしまう~~
  ~~STREAMのAPIを使ってリプライすべきユーザおよびツイートを適切に絞り込む必要がある。~~
 
 
-#　今後実装する機能
+# 今後実装する機能
 
 - ツイート時間をlogとして取得しているので、これを何らかの形でリプしたユーザに詳細に伝えられればいいと思う。
 -- 実装した(GR　plotでツイート概況を画像として返す)
 
 # fork元
-[ほめたもん](https://github.com/seven320/metamon_code)
+
+## [ほめたもん](https://github.com/seven320/metamon_code)
 正確にはリスペクトしてコンセプトを引き継いだもの。
 
 # その他
-実運用上は`config.yaml`を同ディレクトリに作って
+
+## 実運用上は`config.yaml`を同ディレクトリに作って
 ```
 # user_id = CONFIG["user_id"]
 consumer_key = CONFIG["consumer_key"]
@@ -37,5 +39,11 @@ access_token_secret = CONFIG["access_token_secret"]
 を読み込ませる
 
 
-本番環境がCentなのでGRのgemはそれ用のバイナリを配置する必要がある。
+## 本番環境がCentなのでGRのgemはそれ用のバイナリを配置する必要がある。
 https://github.com/sciapp/gr/releases
+
+```
+curl -OL https://github.com/sciapp/gr/releases/download/v0.54.0/gr-0.54.0-CentOS-x86_64.tar.gz
+tar -zxvf gr-0.54.0-CentOS-x86_64.tar.gz
+```
+
