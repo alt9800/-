@@ -45,5 +45,8 @@ https://github.com/sciapp/gr/releases
 ```
 curl -OL https://github.com/sciapp/gr/releases/download/v0.54.0/gr-0.54.0-CentOS-x86_64.tar.gz
 tar -zxvf gr-0.54.0-CentOS-x86_64.tar.gz
+echo "export GRDIR=/home/alt9800/dev/homeltan/gr" >>~/.bashrc
+gem install ruby-gr
+gem install numo-narray
 ```
 
