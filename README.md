@@ -39,6 +39,7 @@ access_token_secret = CONFIG["access_token_secret"]
 を読み込ませる
 
 
+
 ## 本番環境がCentなのでGRのgemはそれ用のバイナリを配置する必要がある。
 https://github.com/sciapp/gr/releases
 
@@ -49,4 +50,13 @@ echo "export GRDIR=/home/alt9800/dev/homeltan/gr" >>~/.bashrc
 gem install ruby-gr
 gem install numo-narray
 ```
+
+なおcron駆動を行う都合上、GRDIRはshellにも記載すること
+
+## 仕様など
+
+[GR.rbはCentOS8ではqt(qt5devel)の破損によりフル機能が使えない様子](https://gitter.im/red-data-tools/ja?at=5e24f49f805f17428de65339)
+
+また、フォント周りの警告ダイアログがついて回るのでこちらも要検討
+
 
